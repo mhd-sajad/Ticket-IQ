@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────
-   Review Queue Page
+   Review Queue Page – VOID-Inspired Heart Disease Design System
    ────────────────────────────────────────── */
 import { useEffect, useState } from 'react';
 import { fetchReviewQueue, triggerRetrain } from '../lib/api';
@@ -7,7 +7,9 @@ import { cn, pct, formatDateTime, CATEGORY_COLORS, URGENCY_COLORS } from '../lib
 import { Card, Badge, PageHeader, LoadingState, ErrorState, EmptyState, Spinner } from '../components/ui';
 import type { ReviewItem, RetrainResult } from '../types';
 
-/* ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   REVIEW QUEUE PAGE — VOID DESIGN SYSTEM
+   ═══════════════════════════════════════════ */
 export default function ReviewQueuePage() {
   const [items, setItems] = useState<ReviewItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -39,12 +41,16 @@ export default function ReviewQueuePage() {
 
   const filtered = filter === 'all' ? items : items.filter(i => i.status === filter);
 
-  if (loading) return <LoadingState label="Loading review queue…" />;
+  if (loading) return <LoadingState label="FETCHING ACTIVE AUDIT QUEUE…" />;
   if (error && !items.length) return <ErrorState message={error} />;
 
   return (
-    <div className="max-w-7xl mx-auto space-y-6">
-      <PageHeader title="Review Queue" description="Low-confidence and agent-corrected tickets for review and model retraining." />
+    <div className="max-w-7xl mx-auto space-y-8 pb-12">
+      <PageHeader
+        eyebrow="HUMAN-IN-THE-LOOP"
+        title="REVIEW QUEUE & ACTIVE RETRAINING ENGINE"
+        description="Ambiguous low-confidence tickets (&lt; 50% Category or &lt; 45% Urgency) and agent-corrected records."
+      />
 
       {/* Controls */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -54,15 +60,16 @@ export default function ReviewQueuePage() {
               key={f}
               onClick={() => setFilter(f)}
               className={cn(
-                'rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
+                'pill-tag !py-1.5 !px-3.5 transition-all cursor-pointer',
                 filter === f
-                  ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400'
-                  : 'text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/40',
+                  ? '!border-[#d4f53c] !text-[#d4f53c] !bg-[#111111] shadow-[0_0_10px_rgba(212,245,60,0.15)]'
+                  : 'hover:text-white',
               )}
             >
-              {f === 'all' ? 'All' : f === 'pending' ? 'Pending' : 'Used for Retraining'}
-              <span className="ml-1.5 rounded-full bg-slate-200 dark:bg-slate-600 px-1.5 py-0.5 text-[10px] font-bold">
-                {f === 'all' ? items.length : items.filter(i => i.status === f).length}
+              <span className={cn('dot', filter !== f && '!bg-[#555555] !shadow-none')} />
+              <span>{f === 'all' ? 'ALL QUEUE' : f === 'pending' ? 'PENDING' : 'RETRAINED'}</span>
+              <span className="ml-1 text-[10px] font-bold text-white">
+                ({f === 'all' ? items.length : items.filter(i => i.status === f).length})
               </span>
             </button>
           ))}
@@ -71,19 +78,19 @@ export default function ReviewQueuePage() {
         <button
           onClick={handleRetrain}
           disabled={retraining}
-          className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 disabled:opacity-50 transition-colors"
+          className="btn-lime !text-xs !py-2.5 !px-5"
         >
           {retraining ? (
             <>
               <Spinner size="sm" />
-              Retraining…
+              RETRAINING ON ACCUMULATED DATA…
             </>
           ) : (
             <>
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
-              Retrain Model
+              TRIGGER PRODUCTION RETRAIN →
             </>
           )}
         </button>
@@ -91,22 +98,22 @@ export default function ReviewQueuePage() {
 
       {/* Retrain result */}
       {retrainResult && (
-        <Card className="p-5 border-l-4 border-l-emerald-500 animate-in fade-in duration-300">
+        <Card className="p-6 border-l-4 border-l-[#d4f53c] bg-[#d4f53c]/5">
           <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30">
-              <svg className="h-5 w-5 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d4f53c] text-black">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
             <div>
-              <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                Retraining {retrainResult.status}!
+              <p className="font-display text-2xl uppercase tracking-wider text-white">
+                RETRAINING {retrainResult.status.toUpperCase()}!
               </p>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                F1 Score: <span className="font-mono">{pct(retrainResult.f1_before)}</span>
-                <span className="mx-2">→</span>
-                <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">{pct(retrainResult.f1_after)}</span>
-                <span className="ml-2 text-emerald-600 dark:text-emerald-400 text-xs font-semibold">
+              <p className="font-mono text-xs text-[#888888] mt-1">
+                F1 SCORE: <span className="text-white">{pct(retrainResult.f1_before)}</span>
+                <span className="mx-2 text-[#555555]">→</span>
+                <span className="text-[#d4f53c] font-bold">{pct(retrainResult.f1_after)}</span>
+                <span className="ml-2 text-[#d4f53c] font-bold">
                   (+{((retrainResult.f1_after - retrainResult.f1_before) * 100).toFixed(1)} pp)
                 </span>
               </p>
@@ -117,28 +124,28 @@ export default function ReviewQueuePage() {
 
       {/* Table */}
       {filtered.length === 0 ? (
-        <EmptyState title="No items in this filter" description="All tickets have been processed or none match the current filter." />
+        <EmptyState title="NO ITEMS IN SELECTED FILTER" description="All tickets have been reviewed or none match the active filter criteria." />
       ) : (
-        <Card className="overflow-hidden">
+        <Card className="overflow-hidden p-0">
           <div className="overflow-x-auto">
-            <table className="w-full text-sm" role="table">
+            <table className="w-full text-left" role="table">
               <thead>
-                <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-800/40">
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Ticket</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Predicted</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Corrected</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Confidence</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Status</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Date</th>
+                <tr className="border-b border-[#1a1a1a] bg-[#050505]">
+                  <th className="px-5 py-4 font-mono text-[10px] uppercase tracking-widest text-[#888888]">TICKET CONTENT</th>
+                  <th className="px-5 py-4 font-mono text-[10px] uppercase tracking-widest text-[#888888]">PREDICTED</th>
+                  <th className="px-5 py-4 font-mono text-[10px] uppercase tracking-widest text-[#888888]">HUMAN REVISION</th>
+                  <th className="px-5 py-4 font-mono text-[10px] uppercase tracking-widest text-[#888888]">CONFIDENCE</th>
+                  <th className="px-5 py-4 font-mono text-[10px] uppercase tracking-widest text-[#888888]">STATUS</th>
+                  <th className="px-5 py-4 font-mono text-[10px] uppercase tracking-widest text-[#888888]">TIMESTAMP</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-700/40">
+              <tbody className="divide-y divide-[#1a1a1a]/60">
                 {filtered.map(item => (
-                  <tr key={item.id} className="hover:bg-slate-50/60 dark:hover:bg-slate-700/20 transition-colors">
-                    <td className="px-4 py-3 max-w-xs">
-                      <p className="text-sm text-slate-700 dark:text-slate-200 line-clamp-2">{item.text}</p>
+                  <tr key={item.id} className="hover:bg-[#111111]/40 transition-colors">
+                    <td className="px-5 py-4 max-w-sm">
+                      <p className="font-body text-xs text-[#ffffff] line-clamp-2">{item.text}</p>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
+                    <td className="px-5 py-4 whitespace-nowrap">
                       <div className="space-y-1">
                         <Badge color={CATEGORY_COLORS[item.predicted_category]}>{item.predicted_category}</Badge>
                         <div>
@@ -146,7 +153,7 @@ export default function ReviewQueuePage() {
                         </div>
                       </div>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
+                    <td className="px-5 py-4 whitespace-nowrap">
                       {item.corrected_category ? (
                         <div className="space-y-1">
                           <Badge color={CATEGORY_COLORS[item.corrected_category]}>{item.corrected_category}</Badge>
@@ -157,26 +164,25 @@ export default function ReviewQueuePage() {
                           )}
                         </div>
                       ) : (
-                        <span className="text-xs text-slate-400">—</span>
+                        <span className="font-mono text-xs text-[#555555]">—</span>
                       )}
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
+                    <td className="px-5 py-4 whitespace-nowrap">
                       <span className={cn(
-                        'font-mono text-sm font-semibold',
-                        item.confidence < 0.5 ? 'text-red-500' : 'text-amber-500',
+                        'font-mono text-xs font-bold',
+                        item.confidence < 0.5 ? 'text-[#ff4444]' : 'text-[#ff8c42]',
                       )}>
                         {pct(item.confidence, 0)}
                       </span>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
+                    <td className="px-5 py-4 whitespace-nowrap">
                       <Badge
-                        color={item.status === 'pending' ? '#f59e0b' : '#10b981'}
-                        className="capitalize"
+                        color={item.status === 'pending' ? '#ff8c42' : '#d4f53c'}
                       >
-                        {item.status === 'used_for_retraining' ? 'Retrained' : 'Pending'}
+                        {item.status === 'used_for_retraining' ? 'RETRAINED' : 'PENDING'}
                       </Badge>
                     </td>
-                    <td className="px-4 py-3 whitespace-nowrap text-xs text-slate-500 dark:text-slate-400">
+                    <td className="px-5 py-4 whitespace-nowrap font-mono text-[11px] text-[#555555]">
                       {formatDateTime(item.created_at)}
                     </td>
                   </tr>

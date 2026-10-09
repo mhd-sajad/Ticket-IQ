@@ -19,34 +19,34 @@ export function cn(...classes: (string | false | null | undefined)[]): string {
 
 /** Category → color mapping */
 export const CATEGORY_COLORS: Record<string, string> = {
-  'Technical': '#ef4444',
-  'Customer Service': '#06b6d4',
-  'Billing and Payments': '#6366f1',
-  'Returns and Exchanges': '#10b981',
+  'Technical': '#ff4444',
+  'Customer Service': '#38bdf8',
+  'Billing and Payments': '#d4f53c',
+  'Returns and Exchanges': '#c084fc',
 };
 
 /** Urgency → color mapping */
 export const URGENCY_COLORS: Record<string, string> = {
   'Low': '#22c55e',
-  'Medium': '#f59e0b',
+  'Medium': '#ff8c42',
   'High': '#f97316',
-  'Critical': '#ef4444',
+  'Critical': '#ff4444',
 };
 
 /** Entity type → color mapping */
 export const ENTITY_COLORS: Record<string, { bg: string; text: string; label: string }> = {
-  'ORDER_ID': { bg: '#dbeafe', text: '#1e40af', label: 'Order ID' },
-  'AMOUNT': { bg: '#f3e8ff', text: '#6b21a8', label: 'Amount' },
-  'ERROR_CODE': { bg: '#fee2e2', text: '#991b1b', label: 'Error Code' },
-  'DATE': { bg: '#fef3c7', text: '#92400e', label: 'Date' },
-  'EMAIL': { bg: '#ccfbf1', text: '#115e59', label: 'Email' },
+  'ORDER_ID': { bg: 'rgba(56, 189, 248, 0.15)', text: '#38bdf8', label: 'Order ID' },
+  'AMOUNT': { bg: 'rgba(212, 245, 60, 0.15)', text: '#d4f53c', label: 'Amount' },
+  'ERROR_CODE': { bg: 'rgba(255, 68, 68, 0.15)', text: '#ff4444', label: 'Error Code' },
+  'DATE': { bg: 'rgba(255, 140, 66, 0.15)', text: '#ff8c42', label: 'Date' },
+  'EMAIL': { bg: 'rgba(192, 132, 252, 0.15)', text: '#c084fc', label: 'Email' },
 };
 
 /** Sentiment label → color */
 export const SENTIMENT_COLORS: Record<string, string> = {
-  positive: '#22c55e',
-  neutral: '#64748b',
-  negative: '#ef4444',
+  positive: '#d4f53c',
+  neutral: '#888888',
+  negative: '#ff4444',
 };
 
 /** Format a date string for display */

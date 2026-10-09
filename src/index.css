@@ -1,91 +1,225 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
-/* ── TicketIQ Design System ── */
+/* ============================================================
+   VOID-INSPIRED DESIGN SYSTEM — TicketIQ
+   Matched from Cardiac Risk AI / Heart Disease Prediction
+   ============================================================ */
 
-/* Custom Theme Tokens */
-@theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+:root {
+  --black:    #000000;
+  --black-2:  #0a0a0a;
+  --black-3:  #111111;
+  --black-4:  #1a1a1a;
+  --lime:     #d4f53c;
+  --lime-dim: #b8d932;
+  --white:    #ffffff;
+  --grey-1:   #888888;
+  --grey-2:   #555555;
+  --red:      #ff4444;
+  --orange:   #ff8c42;
+  --green:    #22c55e;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  --grid-stroke: #1a1a1a;
 }
 
-/* ── Base styles ── */
+@theme {
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+/* ── Base resets & styles ── */
 html {
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
-/* Smooth dark-mode transitions */
-html, body, * {
-  transition-property: background-color, border-color;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  cursor: default;
 }
 
-/* Chart grid stroke var for light/dark */
-:root {
-  --grid-stroke: #e2e8f0;
-}
-.dark {
-  --grid-stroke: #334155;
-}
-
-/* Dark mode Recharts tooltip */
-.dark .recharts-default-tooltip {
-  background-color: #1e293b !important;
-  border: 1px solid #334155 !important;
-  color: #e2e8f0 !important;
-}
-.dark .recharts-tooltip-label {
-  color: #94a3b8 !important;
-}
-.dark .recharts-cartesian-grid line {
-  stroke: #334155;
-}
-.dark .recharts-text {
-  fill: #94a3b8;
-}
-
-/* Scrollbar styling */
+/* ── Custom Void Scrollbar ── */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 3px;
+  height: 3px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--black);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
-}
-.dark ::-webkit-scrollbar-thumb {
-  background: #475569;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--lime);
+  border-radius: 99px;
 }
 
-/* Focus visible ring */
+/* ── Selection ── */
+::selection {
+  background: var(--lime);
+  color: var(--black);
+}
+
+/* ── Headings ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+/* ── Recharts dark styling for Void theme ── */
+.recharts-default-tooltip {
+  background-color: var(--black-2) !important;
+  border: 1px solid var(--black-4) !important;
+  border-radius: 8px !important;
+  color: var(--white) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+.recharts-tooltip-label {
+  color: var(--lime) !important;
+  font-weight: 700 !important;
+}
+.recharts-cartesian-grid line {
+  stroke: var(--black-4) !important;
+}
+.recharts-text {
+  fill: var(--grey-1) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+}
+
+/* ── Focus ring ── */
 :focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid var(--lime);
   outline-offset: 2px;
 }
 
-/* Selection */
-::selection {
-  background-color: #6366f140;
+/* ── Utilities ── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+.font-mono    { font-family: var(--font-mono); }
+
+.lime { color: var(--lime); }
+.bg-lime { background-color: var(--lime); color: var(--black); }
+
+.lime-glow {
+  box-shadow: 0 0 20px rgba(212, 245, 60, 0.25);
 }
 
-/* Utility: animate in */
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+.card-void {
+  background: var(--black-2);
+  border: 1px solid var(--black-4);
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+.card-void:hover {
+  border-color: rgba(212, 245, 60, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* ── Void Pill Tag ── */
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--black-4);
+  background: var(--black-3);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+}
+.pill-tag .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 6px var(--lime);
+}
+
+/* ── Buttons ── */
+.btn-lime {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: none;
+  background: var(--lime);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-lime:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 245, 60, 0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid var(--black-4);
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-outline:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+  background: rgba(212, 245, 60, 0.04);
+}
+
+/* ── Eyebrow header ── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey-2);
+  margin-bottom: 8px;
+}
+
+/* Utility animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 .animate-in {
-  animation: fade-in 0.4s ease-out forwards;
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
-/* Utility: line clamp */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
