@@ -12,10 +12,9 @@ import pandas as pd
 import scipy.sparse as sp
 import sys
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(BASE_DIR))
-DATA_DIR = BASE_DIR / "data" / "processed"
-ARTIFACTS_DIR = BASE_DIR / "artifacts"
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+DATA_DIR = ROOT_DIR / "data" / "processed"
+ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"
 
 
 def map_4class(cat: str) -> str:

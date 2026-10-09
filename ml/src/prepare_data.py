@@ -21,7 +21,7 @@ RANDOM_SEED = 42
 np.random.seed(RANDOM_SEED)
 random.seed(RANDOM_SEED)
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 RAW_CSV = BASE_DIR / "data" / "raw" / "tickets.csv"
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 

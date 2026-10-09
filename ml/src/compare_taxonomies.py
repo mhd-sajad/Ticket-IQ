@@ -12,8 +12,8 @@ import sys
 import time
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(BASE_DIR))
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(ROOT_DIR / "backend"))
 
 import joblib
 import numpy as np
@@ -25,10 +25,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
 from sklearn.svm import LinearSVC
 
-from nlp.preprocess import normalize
+from app.nlp.preprocess import normalize
 
-DATA_DIR = BASE_DIR / "data" / "processed"
-ARTIFACTS_DIR = BASE_DIR / "artifacts"
+DATA_DIR = ROOT_DIR / "data" / "processed"
+ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"
 
 
 def map_4class(cat: str) -> str:

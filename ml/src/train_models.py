@@ -21,8 +21,8 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(BASE_DIR))
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(ROOT_DIR / "backend"))
 
 import joblib
 import numpy as np
@@ -38,11 +38,11 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import FeatureUnion
 from sklearn.svm import LinearSVC
 
-from nlp.features import extract_frustration_feature
-from nlp.preprocess import normalize
+from app.nlp.features import extract_frustration_feature
+from app.nlp.preprocess import normalize
 
-DATA_DIR = BASE_DIR / "data" / "processed"
-ARTIFACTS_DIR = BASE_DIR / "artifacts"
+DATA_DIR = ROOT_DIR / "data" / "processed"
+ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"
 
 
 def evaluate_predictions(y_true, y_pred, labels: List[str]) -> Tuple[Dict[str, float], List[Dict[str, float]], List[List[int]]]:

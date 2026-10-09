@@ -17,11 +17,11 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(BASE_DIR))
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(ROOT_DIR / "backend"))
 
-DATA_DIR = BASE_DIR / "data" / "processed"
-ARTIFACTS_DIR = BASE_DIR / "artifacts"
+DATA_DIR = ROOT_DIR / "data" / "processed"
+ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"
 
 
 def map_4class(cat: str) -> str:

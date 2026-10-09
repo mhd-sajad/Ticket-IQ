@@ -3,10 +3,12 @@ Script to send 20 varied /api/predict calls to http://127.0.0.1:7861/api/predict
 and verify responses.
 """
 import json
+import os
+import sys
 import time
 import urllib.request
 
-URL = "http://127.0.0.1:7861/api/predict"
+URL = sys.argv[1] if len(sys.argv) > 1 else os.getenv("API_URL", "http://127.0.0.1:8000/api/predict")
 
 QUERIES = [
     "My SmartHome Hub keeps disconnecting from WiFi every 10 minutes with error HW-ERR-7291. Order #ORD-44210 purchased for $199.00.",

@@ -8,11 +8,10 @@ import json
 import re
 import pandas as pd
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-REPO_DIR = BASE_DIR.parent
-DATA_DIR = BASE_DIR / "data" / "processed"
-ARTIFACTS_DIR = BASE_DIR / "artifacts"
-README_PATH = REPO_DIR / "README.md"
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+DATA_DIR = ROOT_DIR / "data" / "processed"
+ARTIFACTS_DIR = ROOT_DIR / "ml" / "artifacts"
+README_PATH = ROOT_DIR / "README.md"
 
 
 def map_4class(cat: str) -> str:

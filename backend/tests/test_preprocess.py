@@ -2,7 +2,7 @@
 Tests for NLP preprocessing module
 """
 import pytest
-from nlp.preprocess import normalize, tokenize, remove_stopwords, lemmatize, pipeline_stages
+from app.nlp.preprocess import normalize, tokenize, remove_stopwords, lemmatize, pipeline_stages
 
 
 def test_normalize():

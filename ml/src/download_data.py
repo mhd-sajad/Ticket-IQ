@@ -9,7 +9,7 @@ from datasets import load_dataset
 
 
 def download_raw_data() -> Path:
-    raw_dir = Path(__file__).resolve().parent.parent / "data" / "raw"
+    raw_dir = Path(__file__).resolve().parent.parent.parent / "data" / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
     raw_file = raw_dir / "tickets.csv"
 

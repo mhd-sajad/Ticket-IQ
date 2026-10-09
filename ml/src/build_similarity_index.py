@@ -11,12 +11,12 @@ import pandas as pd
 import scipy.sparse as sp
 import sys
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(BASE_DIR))
-from nlp.similarity import clean_answer
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(ROOT_DIR / "backend"))
+from app.services.similarity import clean_answer
 
-DATA_DIR = BASE_DIR / "data" / "processed"
-ARTIFACTS_DIR = BASE_DIR / "artifacts"
+DATA_DIR = ROOT_DIR / "data" / "processed"
+ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"
 
 
 def map_4class(cat: str) -> str:

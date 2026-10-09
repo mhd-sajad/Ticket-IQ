@@ -9,10 +9,10 @@ from fastapi.testclient import TestClient
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
-from api.main import app
-from nlp.entities import extract_entities
-from nlp.sentiment import analyze_sentiment
-from nlp.pipeline_stages import generate_pipeline_stages
+from app.main import app
+from app.services.entities import extract_entities
+from app.services.sentiment import analyze_sentiment
+from app.nlp.pipeline_stages import generate_pipeline_stages
 
 
 @pytest.fixture(scope="module")
