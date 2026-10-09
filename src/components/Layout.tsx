@@ -6,6 +6,7 @@ import { ThemeToggle } from './ui';
 import { cn } from '../lib/utils';
 import { useState, useEffect } from 'react';
 import { subscribeServerWaking } from '../lib/serverStatus';
+import { subscribeApiMode, type ApiMode } from '../lib/api';
 
 const NAV_ITEMS = [
   { to: '/', label: 'Triage', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01' },
@@ -19,9 +20,15 @@ const NAV_ITEMS = [
 export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isWaking, setIsWaking] = useState(false);
+  const [apiMode, setApiMode] = useState<ApiMode>('live');
 
   useEffect(() => {
-    return subscribeServerWaking(setIsWaking);
+    const unsubWake = subscribeServerWaking(setIsWaking);
+    const unsubApi = subscribeApiMode(setApiMode);
+    return () => {
+      unsubWake();
+      unsubApi();
+    };
   }, []);
 
   return (
@@ -111,8 +118,18 @@ export default function Layout() {
 
           <div className="flex items-center gap-3">
             <div className="pill-tag">
-              <span className="dot" />
-              <span>LIVE TRIAGE ONLINE</span>
+              <span
+                className={cn(
+                  'dot',
+                  apiMode === 'mock-fallback' && '!bg-[#ff8c42] !shadow-[0_0_6px_#ff8c42]',
+                  apiMode === 'mock' && '!bg-[#38bdf8] !shadow-[0_0_6px_#38bdf8]',
+                )}
+              />
+              <span>
+                {apiMode === 'live' && 'LIVE BACKEND ONLINE'}
+                {apiMode === 'mock-fallback' && 'DEMO MODE (BACKEND OFFLINE)'}
+                {apiMode === 'mock' && 'MOCK DEMO MODE'}
+              </span>
             </div>
           </div>
         </header>
