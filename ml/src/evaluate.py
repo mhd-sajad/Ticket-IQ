@@ -19,9 +19,12 @@ from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_f
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT_DIR / "backend"))
+import app.nlp
 
 DATA_DIR = ROOT_DIR / "data" / "processed"
-ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"
+BACKEND_ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"
+ML_ARTIFACTS_DIR = ROOT_DIR / "ml" / "artifacts"
+ARTIFACTS_DIR = BACKEND_ARTIFACTS_DIR
 
 
 def map_4class(cat: str) -> str:
@@ -139,12 +142,16 @@ def main():
         ("MiniLM + Logistic Regression", "cat_minilm_lr.joblib", True),
         ("MiniLM + Linear SVM", "cat_minilm_svm.joblib", True),
     ]:
-        p = ARTIFACTS_DIR / fname
+        p = BACKEND_ARTIFACTS_DIR / fname
+        if not p.exists():
+            p = ML_ARTIFACTS_DIR / fname
         if p.exists():
             clf = joblib.load(p)
             comp_models.append((name, clf, is_emb))
 
-    test_emb_path = ARTIFACTS_DIR / "test_embeddings.npy"
+    test_emb_path = ML_ARTIFACTS_DIR / "test_embeddings.npy"
+    if not test_emb_path.exists():
+        test_emb_path = BACKEND_ARTIFACTS_DIR / "test_embeddings.npy"
     X_test_emb = np.load(test_emb_path) if test_emb_path.exists() else None
 
     models_summary = []
