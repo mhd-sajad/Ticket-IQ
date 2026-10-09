@@ -8,7 +8,7 @@ Handles:
 """
 from datetime import datetime, timezone
 import json
-from typing import Dict, Optional
+from typing import Dict
 import uuid
 import joblib
 import numpy as np

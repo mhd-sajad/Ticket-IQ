@@ -3,7 +3,7 @@ Insights and analytics aggregation service for TicketIQ.
 Aggregates KPIs, topic clusters (keyword rules), trends over time, spikes, keywords, and category/urgency distributions.
 """
 from datetime import datetime, timedelta
-from typing import Dict, List
+from typing import Dict
 import pandas as pd
 from app.core.database import get_db_connection
 

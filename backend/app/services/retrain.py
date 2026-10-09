@@ -4,7 +4,7 @@ Safely incorporates human feedback into training, runs validation on fixed test 
 and hot-swaps model in memory if no regression occurs.
 """
 from datetime import datetime, timezone
-from typing import Dict, Optional
+from typing import Dict
 from fastapi import HTTPException
 import joblib
 import pandas as pd

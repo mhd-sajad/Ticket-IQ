@@ -3,7 +3,7 @@ Feature extraction and Sentiment/Frustration scoring module.
 Combines NLTK VADER sentiment with rule-based frustration signals.
 """
 import re
-from typing import Dict, List, Tuple
+from typing import Dict, List
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 _SIA = None

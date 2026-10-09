@@ -7,7 +7,7 @@ import {
 } from 'recharts';
 import { fetchModels, predictWithModel } from '../lib/api';
 import { cn, pct } from '../lib/utils';
-import { Card, Badge, PageHeader, LoadingState, ErrorState, Spinner } from '../components/ui';
+import { Card, PageHeader, LoadingState, ErrorState, Spinner } from '../components/ui';
 import type { ModelsResponse, ModelPredictResponse } from '../types';
 
 const METRIC_COLORS = {

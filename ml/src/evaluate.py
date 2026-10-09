@@ -19,7 +19,6 @@ from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_f
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT_DIR / "backend"))
-import app.nlp
 
 DATA_DIR = ROOT_DIR / "data" / "processed"
 BACKEND_ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"

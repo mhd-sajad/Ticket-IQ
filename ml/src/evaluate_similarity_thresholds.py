@@ -10,7 +10,6 @@ import joblib
 import numpy as np
 import pandas as pd
 import scipy.sparse as sp
-import sys
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = ROOT_DIR / "data" / "processed"

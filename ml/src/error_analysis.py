@@ -5,7 +5,6 @@ Computes real contributing words via coefficient * tfidf weight.
 Asserts that every example matches test.csv by re-reading test.csv.
 """
 import json
-import sys
 from pathlib import Path
 import joblib
 import numpy as np

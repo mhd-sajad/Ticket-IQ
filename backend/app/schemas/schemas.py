@@ -2,7 +2,7 @@
 Pydantic v2 schemas for TicketIQ API.
 Strictly matching frontend TypeScript interfaces in frontend/src/types/index.ts.
 """
-from typing import Any, Dict, List, Literal, Optional
+from typing import List, Literal, Optional
 from pydantic import BaseModel, Field
 
 

@@ -4,7 +4,6 @@ Saves to data/raw/tickets.csv
 Inspects and prints columns, shapes, and sample row.
 """
 from pathlib import Path
-import pandas as pd
 from datasets import load_dataset
 
 

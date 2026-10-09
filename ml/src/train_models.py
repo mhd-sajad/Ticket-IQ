@@ -19,7 +19,7 @@ import json
 import sys
 import time
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Dict, List, Tuple
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT_DIR / "backend"))
@@ -163,13 +163,11 @@ def run_training():
     print(f"  -> Validation Accuracy (TF-IDF Word 1-2 + Char): {val_acc_union:.4f}")
 
     if val_acc_union > val_acc_word:
-        best_vec = vec_union
         X_train_tfidf = X_train_union
         X_val_tfidf = X_val_union
         X_test_tfidf = X_test_union
         chosen_vec_name = "TF-IDF (Word 1-2 + Char-wb 3-5)"
     else:
-        best_vec = vec_word
         X_train_tfidf = X_train_word
         X_val_tfidf = X_val_word
         X_test_tfidf = X_test_word

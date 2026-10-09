@@ -2,7 +2,6 @@
 Configuration settings and paths for TicketIQ.
 """
 from pathlib import Path
-import sys
 
 # Path resolution:
 # In repo: backend/app/core/config.py -> APP_DIR = backend/app, ROOT_DIR = repo root

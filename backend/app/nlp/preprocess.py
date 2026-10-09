@@ -10,7 +10,7 @@ Functions:
 - pipeline_stages: returns {raw, normalized, tokens, without_stopwords, lemmas}
 """
 import re
-from typing import Dict, List, Optional
+from typing import Dict, List
 import spacy
 
 # Load spaCy once on module import

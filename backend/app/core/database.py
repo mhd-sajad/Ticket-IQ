@@ -6,7 +6,6 @@ Manages:
 - feedback: user-submitted corrections
 """
 import json
-from pathlib import Path
 import sqlite3
 from typing import Dict, List, Optional
 import pandas as pd

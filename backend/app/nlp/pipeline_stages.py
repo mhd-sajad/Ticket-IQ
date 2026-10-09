@@ -6,7 +6,7 @@ NLP Pipeline stages generator for TicketIQ frontend visualization:
 4. without_stopwords: filtered tokens
 5. lemmas: lemmatized tokens
 """
-from typing import Dict, List
+from typing import Dict
 import spacy
 from app.nlp.preprocess import normalize
 

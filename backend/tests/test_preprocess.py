@@ -1,7 +1,6 @@
 """
 Tests for NLP preprocessing module
 """
-import pytest
 from app.nlp.preprocess import normalize, tokenize, remove_stopwords, lemmatize, pipeline_stages
 
 

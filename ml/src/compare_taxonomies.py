@@ -9,7 +9,6 @@ Evaluation and Comparison Script for TicketIQ:
 """
 import json
 import sys
-import time
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
@@ -19,7 +18,6 @@ import joblib
 import numpy as np
 import pandas as pd
 from sklearn.calibration import CalibratedClassifierCV
-from sklearn.dummy import DummyClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
@@ -186,7 +184,7 @@ def main():
     svm_urg = CalibratedClassifierCV(LinearSVC(C=0.5, class_weight="balanced", random_state=42, max_iter=2000), cv=3)
     svm_urg.fit(X_train_tfidf, y_train_urg)
     val_urg_svm = evaluate(y_val_urg, svm_urg.predict(X_val_tfidf), urg_labels)
-    test_urg_svm = evaluate(y_test_urg, svm_urg.predict(X_test_tfidf), urg_labels)
+    _ = evaluate(y_test_urg, svm_urg.predict(X_test_tfidf), urg_labels)
 
     urg_svm_vs_lr = val_urg_svm["f1"] - val_urg_lr["f1"]
     print(f"Urgency LR Val F1: {val_urg_lr['f1']:.4f} | Urgency SVM Val F1: {val_urg_svm['f1']:.4f} (Delta: {urg_svm_vs_lr:+.4f})")
