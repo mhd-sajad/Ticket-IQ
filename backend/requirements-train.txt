@@ -1,0 +1,3 @@
+# Training-only dependencies for TicketIQ
+fastembed==0.9.0
+onnxruntime

@@ -1,0 +1,626 @@
+{
+  "category_misclassifications": [
+    {
+      "test_row_index": 31,
+      "ticket_id": "TCK-27513",
+      "true_label": "Billing and Payments",
+      "predicted_label": "Customer Service",
+      "confidence": 0.92,
+      "text_snippet": "Support for Data Encryption Methods Hello, I am writing to seek clarification on the encryption techniques utilized for medical records within the Wave and Micr...",
+      "full_text": "Support for Data Encryption Methods Hello, I am writing to seek clarification on the encryption techniques utilized for medical records within the Wave and Microsoft Dynamics 365 systems. Could you elaborate on the security protocols in place to ensure the privacy and confidentiality of sensitive medical information? Any additional materials or support you can provide would be greatly appreciated. Thank you for your attention and help.",
+      "top_contributing_words": [
+        {
+          "word": "wave",
+          "weight": 0.3971
+        },
+        {
+          "word": "support you",
+          "weight": 0.3027
+        },
+        {
+          "word": "systems could",
+          "weight": 0.2391
+        },
+        {
+          "word": "or support",
+          "weight": 0.2263
+        },
+        {
+          "word": "confidentiality of",
+          "weight": 0.2217
+        }
+      ]
+    },
+    {
+      "test_row_index": 59,
+      "ticket_id": "TCK-29058",
+      "true_label": "Billing and Payments",
+      "predicted_label": "Technical",
+      "confidence": 0.44,
+      "text_snippet": "Support Request for Analytics Tools Integration with QuickBooks I hope this message finds you well. I am seeking information on analytics tools that can be inte...",
+      "full_text": "Support Request for Analytics Tools Integration with QuickBooks I hope this message finds you well. I am seeking information on analytics tools that can be integrated with QuickBooks for the purpose of investment optimization. My goal is to enhance my financial management and make informed decisions based on data. Could you kindly provide a list of compatible tools along with their features? Additionally, I would greatly appreciate any advice on how to select the most suitable tool for my business. Furthermore, I am interested in knowing the specific system requirements and the setup procedures involved. Thank you for your assistance and I look forward to your response.",
+      "top_contributing_words": [
+        {
+          "word": "purpose",
+          "weight": 0.1578
+        },
+        {
+          "word": "requirements",
+          "weight": 0.157
+        },
+        {
+          "word": "compatible tools",
+          "weight": 0.1462
+        },
+        {
+          "word": "furthermore am",
+          "weight": 0.1431
+        },
+        {
+          "word": "and look",
+          "weight": 0.1376
+        }
+      ]
+    },
+    {
+      "test_row_index": 67,
+      "ticket_id": "TCK-21549",
+      "true_label": "Billing and Payments",
+      "predicted_label": "Customer Service",
+      "confidence": 0.47,
+      "text_snippet": "Urgent Report on Security Breach A security breach has occurred, leading to the compromise of medical data. Despite conducting system scans and reinforcing pass...",
+      "full_text": "Urgent Report on Security Breach A security breach has occurred, leading to the compromise of medical data. Despite conducting system scans and reinforcing password policies, the issue has not been fully resolved.",
+      "top_contributing_words": [
+        {
+          "word": "system scans",
+          "weight": 0.3999
+        },
+        {
+          "word": "data despite",
+          "weight": 0.3378
+        },
+        {
+          "word": "scans",
+          "weight": 0.3155
+        },
+        {
+          "word": "conducting system",
+          "weight": 0.3081
+        },
+        {
+          "word": "fully resolved",
+          "weight": 0.2433
+        }
+      ]
+    },
+    {
+      "test_row_index": 5,
+      "ticket_id": "TCK-14272",
+      "true_label": "Customer Service",
+      "predicted_label": "Billing and Payments",
+      "confidence": 0.53,
+      "text_snippet": "Security Enhancement Notification Kindly revise the security procedures to safeguard medical data, protect confidential information, and ensure adherence to reg...",
+      "full_text": "Security Enhancement Notification Kindly revise the security procedures to safeguard medical data, protect confidential information, and ensure adherence to regulatory standards.",
+      "top_contributing_words": [
+        {
+          "word": "security procedures",
+          "weight": 0.5434
+        },
+        {
+          "word": "regulatory standards",
+          "weight": 0.4013
+        },
+        {
+          "word": "security",
+          "weight": 0.3876
+        },
+        {
+          "word": "procedures to",
+          "weight": 0.2619
+        },
+        {
+          "word": "safeguard medical",
+          "weight": 0.2617
+        }
+      ]
+    },
+    {
+      "test_row_index": 17,
+      "ticket_id": "TCK-13599",
+      "true_label": "Customer Service",
+      "predicted_label": "Billing and Payments",
+      "confidence": 0.31,
+      "text_snippet": "Effective Online Promotion of Digital Products in Today's Market Customer Support, I am seeking information on digital marketing strategies to promote USB stick...",
+      "full_text": "Effective Online Promotion of Digital Products in Today's Market Customer Support, I am seeking information on digital marketing strategies to promote USB sticks and VR headsets. Could you share specific methods to effectively reach the target audience? I am particularly interested in learning about social media advertising, email marketing techniques, and other online promotional approaches. Additionally, I would appreciate guidance on how to measure the success of these strategies and how to adjust tactics based on the results. Thank you for your assistance. I look forward to your response soon.",
+      "top_contributing_words": [
+        {
+          "word": "to measure",
+          "weight": 0.2896
+        },
+        {
+          "word": "marketing techniques",
+          "weight": 0.2704
+        },
+        {
+          "word": "in today",
+          "weight": 0.2453
+        },
+        {
+          "word": "marketing strategies",
+          "weight": 0.2215
+        },
+        {
+          "word": "measure",
+          "weight": 0.2072
+        }
+      ]
+    },
+    {
+      "test_row_index": 27,
+      "ticket_id": "TCK-33330",
+      "true_label": "Customer Service",
+      "predicted_label": "Technical",
+      "confidence": 0.86,
+      "text_snippet": "Urgent Assistance Required for Sudden Drop in Website Traffic Hello Customer Support, I am inquiring regarding a recent decline in website traffic. This could b...",
+      "full_text": "Urgent Assistance Required for Sudden Drop in Website Traffic Hello Customer Support, I am inquiring regarding a recent decline in website traffic. This could be due to outdated SEO techniques. Although I have attempted to update our social media content, the issue continues. I kindly request your assistance to address this promptly and provide a resolution. Please feel free to request any additional information you may need from me. I am hopeful for a swift response. Thanks for your help. Sincerely, [Your Name]",
+      "top_contributing_words": [
+        {
+          "word": "website",
+          "weight": 0.6587
+        },
+        {
+          "word": "in website",
+          "weight": 0.2769
+        },
+        {
+          "word": "sudden",
+          "weight": 0.1849
+        },
+        {
+          "word": "request any",
+          "weight": 0.1766
+        },
+        {
+          "word": "media content",
+          "weight": 0.1654
+        }
+      ]
+    },
+    {
+      "test_row_index": 16,
+      "ticket_id": "TCK-29561",
+      "true_label": "Returns and Exchanges",
+      "predicted_label": "Technical",
+      "confidence": 0.72,
+      "text_snippet": "Problem Concerning Order Fulfillment Greetings, customer support team. I am reaching out to address an issue regarding the order fulfillment process, specifical...",
+      "full_text": "Problem Concerning Order Fulfillment Greetings, customer support team. I am reaching out to address an issue regarding the order fulfillment process, specifically inventory inaccuracies. Our present stock tracking and management framework appears to be inadequate, causing orders to go unfilled. Despite conducting manual inventory counts and system diagnostics, the problem remains unresolved. I kindly request your assistance in finding a resolution and enhancing our inventory management. Should you need additional details, please inform me.",
+      "top_contributing_words": [
+        {
+          "word": "diagnostics",
+          "weight": 0.5123
+        },
+        {
+          "word": "conducting",
+          "weight": 0.1609
+        },
+        {
+          "word": "present",
+          "weight": 0.1592
+        },
+        {
+          "word": "enhancing",
+          "weight": 0.1463
+        },
+        {
+          "word": "unresolved kindly",
+          "weight": 0.1297
+        }
+      ]
+    },
+    {
+      "test_row_index": 63,
+      "ticket_id": "TCK-10358",
+      "true_label": "Returns and Exchanges",
+      "predicted_label": "Technical",
+      "confidence": 0.35,
+      "text_snippet": "Request for Product Swap Dear Customer Support Team,\\n\\nI am formally requesting to swap the product I recently bought, as it is causing problems that directly ...",
+      "full_text": "Request for Product Swap Dear Customer Support Team,\\n\\nI am formally requesting to swap the product I recently bought, as it is causing problems that directly affect the operation of the SaaS platform. The product in question is vital for core functions, and its current condition is disrupting service delivery, leading to considerable inconvenience.\\n\\nFor context, I expected the product to integrate smoothly with my existing SaaS setup. However, shortly after deployment, I started experiencing unexpected errors and performance issues.\\n\\nThank you for addressing my request for a product exchange. To proceed, could you please provide the product name, serial number, purchase date, and a detailed description of the errors experienced? This information will help us speed up the process. Once received, please inform me of the necessary documentation and outline the next steps, including approximate timeframes for the exchange. If preferred, I am open to discussing this over the phone; kindly let me know a convenient time for a call. I appreciate your understanding of the urgency and your commitment to resolving this matter.",
+      "top_contributing_words": [
+        {
+          "word": "considerable",
+          "weight": 0.2133
+        },
+        {
+          "word": "documentation",
+          "weight": 0.1232
+        },
+        {
+          "word": "service",
+          "weight": 0.1031
+        },
+        {
+          "word": "discussing",
+          "weight": 0.1005
+        },
+        {
+          "word": "information will",
+          "weight": 0.0982
+        }
+      ]
+    },
+    {
+      "test_row_index": 97,
+      "ticket_id": "TCK-21981",
+      "true_label": "Returns and Exchanges",
+      "predicted_label": "Technical",
+      "confidence": 0.51,
+      "text_snippet": "Error During Data Visualization Analysis Hello Customer Support, an unexpected error in data visualization has occurred while analyzing investment metrics. It m...",
+      "full_text": "Error During Data Visualization Analysis Hello Customer Support, an unexpected error in data visualization has occurred while analyzing investment metrics. It may be related to software compatibility issues. So far, I have restarted the analytics software and checked for pending updates across the affected products. I would greatly appreciate your assistance in resolving this issue promptly. Please let me know if there are any additional steps I can take to troubleshoot the problem. Thank you for your help with this matter.",
+      "top_contributing_words": [
+        {
+          "word": "during data",
+          "weight": 0.3062
+        },
+        {
+          "word": "analytics software",
+          "weight": 0.2891
+        },
+        {
+          "word": "affected",
+          "weight": 0.225
+        },
+        {
+          "word": "restarted",
+          "weight": 0.1987
+        },
+        {
+          "word": "visualization",
+          "weight": 0.1779
+        }
+      ]
+    },
+    {
+      "test_row_index": 0,
+      "ticket_id": "TCK-10748",
+      "true_label": "Technical",
+      "predicted_label": "Billing and Payments",
+      "confidence": 0.56,
+      "text_snippet": "Viber Engagement Plan Seeking to explore the potential of utilizing Viber through GitLab to boost brand interaction. Can you offer a comprehensive strategy outl...",
+      "full_text": "Viber Engagement Plan Seeking to explore the potential of utilizing Viber through GitLab to boost brand interaction. Can you offer a comprehensive strategy outline for effectively harnessing the platform? I would value insights into best practices, common challenges, and successful case studies. My primary interests include creating compelling content, cultivating a community, and assessing the effectiveness of engagement efforts. I believe that implementing the right approach can enhance brand visibility, increase sales, and strengthen customer loyalty. Thank you for your time and expertise.",
+      "top_contributing_words": [
+        {
+          "word": "offer comprehensive",
+          "weight": 0.3959
+        },
+        {
+          "word": "would value",
+          "weight": 0.2735
+        },
+        {
+          "word": "effectiveness",
+          "weight": 0.2507
+        },
+        {
+          "word": "brand visibility",
+          "weight": 0.2444
+        },
+        {
+          "word": "can enhance",
+          "weight": 0.2092
+        }
+      ]
+    }
+  ],
+  "urgency_misclassifications": [
+    {
+      "test_row_index": 0,
+      "ticket_id": "TCK-10748",
+      "true_label": "High",
+      "predicted_label": "Low",
+      "confidence": 0.36,
+      "text_snippet": "Viber Engagement Plan Seeking to explore the potential of utilizing Viber through GitLab to boost brand interaction. Can you offer a comprehensive strategy outl...",
+      "full_text": "Viber Engagement Plan Seeking to explore the potential of utilizing Viber through GitLab to boost brand interaction. Can you offer a comprehensive strategy outline for effectively harnessing the platform? I would value insights into best practices, common challenges, and successful case studies. My primary interests include creating compelling content, cultivating a community, and assessing the effectiveness of engagement efforts. I believe that implementing the right approach can enhance brand visibility, increase sales, and strengthen customer loyalty. Thank you for your time and expertise.",
+      "top_contributing_words": [
+        {
+          "word": "would value",
+          "weight": 0.2808
+        },
+        {
+          "word": "interaction",
+          "weight": 0.1964
+        },
+        {
+          "word": "to boost",
+          "weight": 0.1836
+        },
+        {
+          "word": "brand",
+          "weight": 0.1762
+        },
+        {
+          "word": "potential of",
+          "weight": 0.1758
+        }
+      ]
+    },
+    {
+      "test_row_index": 3,
+      "ticket_id": "TCK-11502",
+      "true_label": "High",
+      "predicted_label": "Medium",
+      "confidence": 0.58,
+      "text_snippet": "Digital Marketing Campaigns Halted Due to Technical Problems The digital marketing initiatives managed by the agency have come to a halt, likely due to conflict...",
+      "full_text": "Digital Marketing Campaigns Halted Due to Technical Problems The digital marketing initiatives managed by the agency have come to a halt, likely due to conflicts caused by software and hardware issues, possibly stemming from malware or network disruptions.",
+      "top_contributing_words": [
+        {
+          "word": "to technical",
+          "weight": 0.3662
+        },
+        {
+          "word": "by software",
+          "weight": 0.2232
+        },
+        {
+          "word": "to conflicts",
+          "weight": 0.1691
+        },
+        {
+          "word": "managed by",
+          "weight": 0.1327
+        },
+        {
+          "word": "initiatives",
+          "weight": 0.1286
+        }
+      ]
+    },
+    {
+      "test_row_index": 21,
+      "ticket_id": "TCK-10368",
+      "true_label": "High",
+      "predicted_label": "Low",
+      "confidence": 0.45,
+      "text_snippet": "Information on Agile Team Structure Dear Customer Support,\\n\\nI trust this message reaches you well. I am reaching out to request comprehensive details about th...",
+      "full_text": "Information on Agile Team Structure Dear Customer Support,\\n\\nI trust this message reaches you well. I am reaching out to request comprehensive details about the configuration of agile teams within the organization. Gaining insight into specific roles, duties, and workflows of these teams is essential for enhancing collaboration and streamlining project management. Could you kindly supply documentation that provides an overview of how teams are organized, including the methodologies and tools they utilize? Additionally, I would appreciate any guidelines and best practices that the teams adhere to.\\n\\nThank you for your assistance regarding the agile team organization.",
+      "top_contributing_words": [
+        {
+          "word": "agile",
+          "weight": 0.4874
+        },
+        {
+          "word": "agile team",
+          "weight": 0.3841
+        },
+        {
+          "word": "and best",
+          "weight": 0.2539
+        },
+        {
+          "word": "gaining",
+          "weight": 0.1168
+        },
+        {
+          "word": "documentation that",
+          "weight": 0.1137
+        }
+      ]
+    },
+    {
+      "test_row_index": 47,
+      "ticket_id": "TCK-26934",
+      "true_label": "High",
+      "predicted_label": "Medium",
+      "confidence": 0.65,
+      "text_snippet": "Problem with Excel 2021 Crashing During Data Analysis Hello Customer Support, I am encountering difficulties with Excel 2021 frequently crashing while performin...",
+      "full_text": "Problem with Excel 2021 Crashing During Data Analysis Hello Customer Support, I am encountering difficulties with Excel 2021 frequently crashing while performing data analysis. This issue could be related to incompatible add-ins or outdated drivers. Despite attempting to restart my device, updating Excel, and verifying the dependencies, the problem remains unresolved. I would be grateful for any support you can offer to resolve this. Please inform me if there are any additional actions I can undertake or if you need further details from me. Thank you for your assistance.",
+      "top_contributing_words": [
+        {
+          "word": "excel",
+          "weight": 0.3728
+        },
+        {
+          "word": "crashing",
+          "weight": 0.22
+        },
+        {
+          "word": "outdated drivers",
+          "weight": 0.131
+        },
+        {
+          "word": "excel 2021",
+          "weight": 0.126
+        },
+        {
+          "word": "you need",
+          "weight": 0.1212
+        }
+      ]
+    },
+    {
+      "test_row_index": 2,
+      "ticket_id": "TCK-33602",
+      "true_label": "Medium",
+      "predicted_label": "Low",
+      "confidence": 0.65,
+      "text_snippet": "Query Concerning Campaign Metrics Update I hope this message finds you well. I am currently encountering an issue where campaign metrics are not updating accura...",
+      "full_text": "Query Concerning Campaign Metrics Update I hope this message finds you well. I am currently encountering an issue where campaign metrics are not updating accurately. After verifying the data sources and refreshing the dashboard, the problem remains unresolved. I believe there might be a technical issue or an integration problem. I would greatly appreciate your prompt assistance in addressing this. Kindly inform me of any further actions required or if additional details are necessary to investigate. Thank you for your support in resolving this matter.",
+      "top_contributing_words": [
+        {
+          "word": "this kindly",
+          "weight": 0.2378
+        },
+        {
+          "word": "technical issue",
+          "weight": 0.2242
+        },
+        {
+          "word": "further actions",
+          "weight": 0.2127
+        },
+        {
+          "word": "not updating",
+          "weight": 0.1956
+        },
+        {
+          "word": "and refreshing",
+          "weight": 0.1876
+        }
+      ]
+    },
+    {
+      "test_row_index": 5,
+      "ticket_id": "TCK-14272",
+      "true_label": "Medium",
+      "predicted_label": "Low",
+      "confidence": 0.81,
+      "text_snippet": "Security Enhancement Notification Kindly revise the security procedures to safeguard medical data, protect confidential information, and ensure adherence to reg...",
+      "full_text": "Security Enhancement Notification Kindly revise the security procedures to safeguard medical data, protect confidential information, and ensure adherence to regulatory standards.",
+      "top_contributing_words": [
+        {
+          "word": "to regulatory",
+          "weight": 0.3547
+        },
+        {
+          "word": "revise the",
+          "weight": 0.288
+        },
+        {
+          "word": "revise",
+          "weight": 0.2467
+        },
+        {
+          "word": "the security",
+          "weight": 0.2443
+        },
+        {
+          "word": "regulatory",
+          "weight": 0.244
+        }
+      ]
+    },
+    {
+      "test_row_index": 6,
+      "ticket_id": "TCK-30293",
+      "true_label": "Medium",
+      "predicted_label": "Low",
+      "confidence": 0.49,
+      "text_snippet": "Incident of Unauthorised Access to Medical Records Dear Customer Support,\\n\\nI am contacting you to report a significant event that happened recently. It appear...",
+      "full_text": "Incident of Unauthorised Access to Medical Records Dear Customer Support,\\n\\nI am contacting you to report a significant event that happened recently. It appears that our medical records have been accessed without authorization. Following an initial investigation, we suspect that the breach might be due to an outdated encryption protocol that was in use.\\n\\nIn response, we have already taken swift action by changing all pertinent passwords and verifying the firewall's effectiveness. Nevertheless, we still need your support to thoroughly resolve this issue and prevent similar incidents from happening again.\\n\\nWe would greatly value your guidance on updating our encryption protocols to the most recent standards. Additionally, we are open to any further measures we can implement to secure our medical records more effectively. Please provide us with the necessary steps and any specific documentation or procedures that are required.\\n\\nWe are grateful for your swift resolution to this situation and look forward to your response.\\n\\nBest regards,\\n[Your Name]",
+      "top_contributing_words": [
+        {
+          "word": "your guidance",
+          "weight": 0.1547
+        },
+        {
+          "word": "swift action",
+          "weight": 0.1279
+        },
+        {
+          "word": "thoroughly",
+          "weight": 0.1189
+        },
+        {
+          "word": "records dear",
+          "weight": 0.1185
+        },
+        {
+          "word": "secure our",
+          "weight": 0.1185
+        }
+      ]
+    },
+    {
+      "test_row_index": 7,
+      "ticket_id": "TCK-19969",
+      "true_label": "Medium",
+      "predicted_label": "High",
+      "confidence": 0.5,
+      "text_snippet": "Problem with Marketing Dashboard Marketing dashboard showing real-time analytics affected by recent system update.",
+      "full_text": "Problem with Marketing Dashboard Marketing dashboard showing real-time analytics affected by recent system update.",
+      "top_contributing_words": [
+        {
+          "word": "with marketing",
+          "weight": 0.4103
+        },
+        {
+          "word": "system update",
+          "weight": 0.2419
+        },
+        {
+          "word": "real time",
+          "weight": 0.1392
+        },
+        {
+          "word": "time",
+          "weight": 0.1388
+        },
+        {
+          "word": "affected",
+          "weight": 0.1341
+        }
+      ]
+    },
+    {
+      "test_row_index": 26,
+      "ticket_id": "TCK-32091",
+      "true_label": "Low",
+      "predicted_label": "Medium",
+      "confidence": 0.44,
+      "text_snippet": "Technical Problem: App Crashes on MacBook I am currently facing several app crashes on my MacBook. The crashes began unexpectedly, and I believe they might be c...",
+      "full_text": "Technical Problem: App Crashes on MacBook I am currently facing several app crashes on my MacBook. The crashes began unexpectedly, and I believe they might be caused by software incompatibilities. Despite restarting my MacBook, updating applications, and reviewing my settings, the problem continues. I would be grateful if you could provide assistance in resolving this. Could you please ask for any further actions I should take or any details you require from me? I am eagerly waiting for your response.",
+      "top_contributing_words": [
+        {
+          "word": "app",
+          "weight": 0.2048
+        },
+        {
+          "word": "by software",
+          "weight": 0.1421
+        },
+        {
+          "word": "waiting",
+          "weight": 0.1418
+        },
+        {
+          "word": "updating applications",
+          "weight": 0.1361
+        },
+        {
+          "word": "waiting for",
+          "weight": 0.1185
+        }
+      ]
+    },
+    {
+      "test_row_index": 30,
+      "ticket_id": "TCK-19337",
+      "true_label": "Low",
+      "predicted_label": "High",
+      "confidence": 0.52,
+      "text_snippet": "Inquiry Regarding Data Analytics Services Is it possible to get information on data analytics services that optimize investment strategies? This would greatly a...",
+      "full_text": "Inquiry Regarding Data Analytics Services Is it possible to get information on data analytics services that optimize investment strategies? This would greatly assist us in making informed decisions and potentially enhancing our portfolio performance. Thank you for your assistance!",
+      "top_contributing_words": [
+        {
+          "word": "possible to",
+          "weight": 0.2086
+        },
+        {
+          "word": "analytics services",
+          "weight": 0.1848
+        },
+        {
+          "word": "making informed",
+          "weight": 0.1735
+        },
+        {
+          "word": "greatly assist",
+          "weight": 0.17
+        },
+        {
+          "word": "data analytics",
+          "weight": 0.1372
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,544 @@
+{
+  "category_4class": {
+    "accuracy": 0.6937,
+    "precision": 0.5771,
+    "recall": 0.6047,
+    "f1": 0.5883,
+    "per_class": [
+      {
+        "label": "Billing and Payments",
+        "precision": 0.7025,
+        "recall": 0.7054,
+        "f1": 0.7039,
+        "support": 241
+      },
+      {
+        "label": "Customer Service",
+        "precision": 0.4332,
+        "recall": 0.5306,
+        "f1": 0.477,
+        "support": 507
+      },
+      {
+        "label": "Returns and Exchanges",
+        "precision": 0.3448,
+        "recall": 0.4237,
+        "f1": 0.3802,
+        "support": 118
+      },
+      {
+        "label": "Technical",
+        "precision": 0.8278,
+        "recall": 0.7591,
+        "f1": 0.7919,
+        "support": 1710
+      }
+    ],
+    "confusion_matrix": [
+      [
+        170,
+        30,
+        7,
+        34
+      ],
+      [
+        21,
+        269,
+        17,
+        200
+      ],
+      [
+        6,
+        26,
+        50,
+        36
+      ],
+      [
+        45,
+        296,
+        71,
+        1298
+      ]
+    ],
+    "labels": [
+      "Billing and Payments",
+      "Customer Service",
+      "Returns and Exchanges",
+      "Technical"
+    ],
+    "majority_baseline": {
+      "majority_class": "Technical",
+      "accuracy": 0.6638,
+      "macro_precision": 0.166,
+      "macro_recall": 0.25,
+      "macro_f1": 0.1995
+    }
+  },
+  "urgency_3class": {
+    "accuracy": 0.5474,
+    "precision": 0.5285,
+    "recall": 0.538,
+    "f1": 0.5314,
+    "per_class": [
+      {
+        "label": "High",
+        "precision": 0.6075,
+        "recall": 0.5925,
+        "f1": 0.5999,
+        "support": 1011
+      },
+      {
+        "label": "Medium",
+        "precision": 0.5759,
+        "recall": 0.5308,
+        "f1": 0.5524,
+        "support": 1072
+      },
+      {
+        "label": "Low",
+        "precision": 0.402,
+        "recall": 0.4909,
+        "f1": 0.442,
+        "support": 493
+      }
+    ],
+    "confusion_matrix": [
+      [
+        599,
+        266,
+        146
+      ],
+      [
+        289,
+        569,
+        214
+      ],
+      [
+        98,
+        153,
+        242
+      ]
+    ],
+    "labels": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "majority_baseline": {
+      "majority_class": "Medium",
+      "accuracy": 0.4161,
+      "macro_precision": 0.1387,
+      "macro_recall": 0.3333,
+      "macro_f1": 0.1959
+    }
+  },
+  "models": [
+    {
+      "name": "TF-IDF + Logistic Regression",
+      "accuracy": 0.6937,
+      "precision": 0.5771,
+      "recall": 0.6047,
+      "f1": 0.5883
+    },
+    {
+      "name": "TF-IDF + Linear SVM",
+      "accuracy": 0.7415,
+      "precision": 0.744,
+      "recall": 0.4865,
+      "f1": 0.5321
+    },
+    {
+      "name": "TF-IDF + Naive Bayes",
+      "accuracy": 0.6859,
+      "precision": 0.7589,
+      "recall": 0.4455,
+      "f1": 0.4686
+    },
+    {
+      "name": "MiniLM + Logistic Regression",
+      "accuracy": 0.5384,
+      "precision": 0.462,
+      "recall": 0.5261,
+      "f1": 0.4583
+    },
+    {
+      "name": "MiniLM + Linear SVM",
+      "accuracy": 0.7252,
+      "precision": 0.7163,
+      "recall": 0.442,
+      "f1": 0.4701
+    }
+  ],
+  "per_class": {
+    "TF-IDF + Logistic Regression": [
+      {
+        "label": "Billing and Payments",
+        "precision": 0.7025,
+        "recall": 0.7054,
+        "f1": 0.7039,
+        "support": 241
+      },
+      {
+        "label": "Customer Service",
+        "precision": 0.4332,
+        "recall": 0.5306,
+        "f1": 0.477,
+        "support": 507
+      },
+      {
+        "label": "Returns and Exchanges",
+        "precision": 0.3448,
+        "recall": 0.4237,
+        "f1": 0.3802,
+        "support": 118
+      },
+      {
+        "label": "Technical",
+        "precision": 0.8278,
+        "recall": 0.7591,
+        "f1": 0.7919,
+        "support": 1710
+      }
+    ],
+    "TF-IDF + Linear SVM": [
+      {
+        "label": "Billing and Payments",
+        "precision": 0.9226,
+        "recall": 0.6432,
+        "f1": 0.7579,
+        "support": 241
+      },
+      {
+        "label": "Customer Service",
+        "precision": 0.5135,
+        "recall": 0.2249,
+        "f1": 0.3128,
+        "support": 507
+      },
+      {
+        "label": "Returns and Exchanges",
+        "precision": 0.7895,
+        "recall": 0.1271,
+        "f1": 0.219,
+        "support": 118
+      },
+      {
+        "label": "Technical",
+        "precision": 0.7503,
+        "recall": 0.9509,
+        "f1": 0.8388,
+        "support": 1710
+      }
+    ],
+    "TF-IDF + Naive Bayes": [
+      {
+        "label": "Billing and Payments",
+        "precision": 0.9247,
+        "recall": 0.5602,
+        "f1": 0.6977,
+        "support": 241
+      },
+      {
+        "label": "Customer Service",
+        "precision": 0.3469,
+        "recall": 0.3688,
+        "f1": 0.3576,
+        "support": 507
+      },
+      {
+        "label": "Returns and Exchanges",
+        "precision": 1.0,
+        "recall": 0.0085,
+        "f1": 0.0168,
+        "support": 118
+      },
+      {
+        "label": "Technical",
+        "precision": 0.764,
+        "recall": 0.8444,
+        "f1": 0.8022,
+        "support": 1710
+      }
+    ],
+    "MiniLM + Logistic Regression": [
+      {
+        "label": "Billing and Payments",
+        "precision": 0.5921,
+        "recall": 0.6805,
+        "f1": 0.6332,
+        "support": 241
+      },
+      {
+        "label": "Customer Service",
+        "precision": 0.3143,
+        "recall": 0.3905,
+        "f1": 0.3483,
+        "support": 507
+      },
+      {
+        "label": "Returns and Exchanges",
+        "precision": 0.1091,
+        "recall": 0.4661,
+        "f1": 0.1768,
+        "support": 118
+      },
+      {
+        "label": "Technical",
+        "precision": 0.8326,
+        "recall": 0.5673,
+        "f1": 0.6748,
+        "support": 1710
+      }
+    ],
+    "MiniLM + Linear SVM": [
+      {
+        "label": "Billing and Payments",
+        "precision": 0.9371,
+        "recall": 0.6183,
+        "f1": 0.745,
+        "support": 241
+      },
+      {
+        "label": "Customer Service",
+        "precision": 0.4487,
+        "recall": 0.1381,
+        "f1": 0.2112,
+        "support": 507
+      },
+      {
+        "label": "Returns and Exchanges",
+        "precision": 0.75,
+        "recall": 0.0508,
+        "f1": 0.0952,
+        "support": 118
+      },
+      {
+        "label": "Technical",
+        "precision": 0.7292,
+        "recall": 0.9608,
+        "f1": 0.8292,
+        "support": 1710
+      }
+    ],
+    "Urgency (TF-IDF + LR)": [
+      {
+        "label": "High",
+        "precision": 0.6075,
+        "recall": 0.5925,
+        "f1": 0.5999,
+        "support": 1011
+      },
+      {
+        "label": "Medium",
+        "precision": 0.5759,
+        "recall": 0.5308,
+        "f1": 0.5524,
+        "support": 1072
+      },
+      {
+        "label": "Low",
+        "precision": 0.402,
+        "recall": 0.4909,
+        "f1": 0.442,
+        "support": 493
+      }
+    ]
+  },
+  "confusion_matrices": {
+    "TF-IDF + Logistic Regression": {
+      "labels": [
+        "Billing and Payments",
+        "Customer Service",
+        "Returns and Exchanges",
+        "Technical"
+      ],
+      "matrix": [
+        [
+          170,
+          30,
+          7,
+          34
+        ],
+        [
+          21,
+          269,
+          17,
+          200
+        ],
+        [
+          6,
+          26,
+          50,
+          36
+        ],
+        [
+          45,
+          296,
+          71,
+          1298
+        ]
+      ]
+    },
+    "TF-IDF + Linear SVM": {
+      "labels": [
+        "Billing and Payments",
+        "Customer Service",
+        "Returns and Exchanges",
+        "Technical"
+      ],
+      "matrix": [
+        [
+          155,
+          14,
+          1,
+          71
+        ],
+        [
+          4,
+          114,
+          2,
+          387
+        ],
+        [
+          2,
+          18,
+          15,
+          83
+        ],
+        [
+          7,
+          76,
+          1,
+          1626
+        ]
+      ]
+    },
+    "TF-IDF + Naive Bayes": {
+      "labels": [
+        "Billing and Payments",
+        "Customer Service",
+        "Returns and Exchanges",
+        "Technical"
+      ],
+      "matrix": [
+        [
+          135,
+          52,
+          0,
+          54
+        ],
+        [
+          6,
+          187,
+          0,
+          314
+        ],
+        [
+          4,
+          35,
+          1,
+          78
+        ],
+        [
+          1,
+          265,
+          0,
+          1444
+        ]
+      ]
+    },
+    "MiniLM + Logistic Regression": {
+      "labels": [
+        "Billing and Payments",
+        "Customer Service",
+        "Returns and Exchanges",
+        "Technical"
+      ],
+      "matrix": [
+        [
+          164,
+          36,
+          23,
+          18
+        ],
+        [
+          44,
+          198,
+          113,
+          152
+        ],
+        [
+          8,
+          30,
+          55,
+          25
+        ],
+        [
+          61,
+          366,
+          313,
+          970
+        ]
+      ]
+    },
+    "MiniLM + Linear SVM": {
+      "labels": [
+        "Billing and Payments",
+        "Customer Service",
+        "Returns and Exchanges",
+        "Technical"
+      ],
+      "matrix": [
+        [
+          149,
+          12,
+          0,
+          80
+        ],
+        [
+          2,
+          70,
+          1,
+          434
+        ],
+        [
+          3,
+          13,
+          6,
+          96
+        ],
+        [
+          5,
+          61,
+          1,
+          1643
+        ]
+      ]
+    },
+    "Urgency (TF-IDF + LR)": {
+      "labels": [
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "matrix": [
+        [
+          599,
+          266,
+          146
+        ],
+        [
+          289,
+          569,
+          214
+        ],
+        [
+          98,
+          153,
+          242
+        ]
+      ]
+    }
+  },
+  "test_sample_size": 2576
+}

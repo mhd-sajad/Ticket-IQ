@@ -1,0 +1,44 @@
+[
+  {
+    "accuracy": 0.5376,
+    "precision": 0.5263,
+    "recall": 0.5394,
+    "f1": 0.5293,
+    "name": "BoW + Logistic Regression"
+  },
+  {
+    "accuracy": 0.5517,
+    "precision": 0.5407,
+    "recall": 0.5543,
+    "f1": 0.5435,
+    "name": "TF-IDF + Logistic Regression"
+  },
+  {
+    "accuracy": 0.5766,
+    "precision": 0.5995,
+    "recall": 0.5258,
+    "f1": 0.533,
+    "name": "TF-IDF + SVM"
+  },
+  {
+    "accuracy": 0.4941,
+    "precision": 0.5514,
+    "recall": 0.4253,
+    "f1": 0.4048,
+    "name": "Naive Bayes"
+  },
+  {
+    "accuracy": 0.4211,
+    "precision": 0.417,
+    "recall": 0.4298,
+    "f1": 0.4133,
+    "name": "Sentence Embeddings + LR"
+  },
+  {
+    "accuracy": 0.5474,
+    "precision": 0.5366,
+    "recall": 0.5501,
+    "f1": 0.5394,
+    "name": "TF-IDF + Frustration + LR"
+  }
+]

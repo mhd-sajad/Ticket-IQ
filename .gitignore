@@ -1,0 +1,58 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node dependencies & build
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.cache/
+
+# Datasets & training caches
+backend/data/raw/
+backend/artifacts/*_embeddings.npy
+*.npy
+
+# SQLite database runtime files
+backend/db/*.db
+backend/db/*.sqlite
+backend/db/*.sqlite3
+*.db-journal
+hf-space/
+Ticket_IQ/

@@ -1,0 +1,127 @@
+/* ──────────────────────────────────────────
+   Mock data – Review Queue & Retrain
+   ────────────────────────────────────────── */
+import type { ReviewItem, RetrainResult } from '../types';
+
+export function getMockReviewQueue(): ReviewItem[] {
+  return [
+    {
+      id: 'RV-001',
+      text: 'I was billed $59.99 for a product I returned two weeks ago. The return was confirmed but the refund hasn\'t appeared on my statement.',
+      predicted_category: 'Billing and Payments',
+      predicted_urgency: 'Medium',
+      corrected_category: 'Returns and Exchanges',
+      corrected_urgency: 'High',
+      status: 'pending',
+      created_at: '2026-10-07T14:23:00Z',
+      confidence: 0.52,
+    },
+    {
+      id: 'RV-002',
+      text: 'My smart thermostat stopped connecting after the latest app update. It shows offline in the app but the device itself seems to be working fine.',
+      predicted_category: 'Technical',
+      predicted_urgency: 'Low',
+      corrected_category: null,
+      corrected_urgency: null,
+      status: 'pending',
+      created_at: '2026-10-07T11:05:00Z',
+      confidence: 0.48,
+    },
+    {
+      id: 'RV-003',
+      text: 'Can\'t access my company\'s team workspace after my admin changed the SSO settings. Getting a "federation error" message.',
+      predicted_category: 'Customer Service',
+      predicted_urgency: 'Medium',
+      corrected_category: 'Technical',
+      corrected_urgency: 'High',
+      status: 'used_for_retraining',
+      created_at: '2026-10-06T09:45:00Z',
+      confidence: 0.41,
+    },
+    {
+      id: 'RV-004',
+      text: 'I need help changing my delivery address for order #ORD-55612. The package hasn\'t shipped yet so it should be possible to update it.',
+      predicted_category: 'Customer Service',
+      predicted_urgency: 'Low',
+      corrected_category: 'Customer Service',
+      corrected_urgency: 'Medium',
+      status: 'used_for_retraining',
+      created_at: '2026-10-06T16:30:00Z',
+      confidence: 0.55,
+    },
+    {
+      id: 'RV-005',
+      text: 'Your website crashed during checkout and now I have a pending charge of $234.50 but no order confirmation. Please help!',
+      predicted_category: 'Technical',
+      predicted_urgency: 'High',
+      corrected_category: 'Billing and Payments',
+      corrected_urgency: 'Critical',
+      status: 'pending',
+      created_at: '2026-10-07T08:12:00Z',
+      confidence: 0.38,
+    },
+    {
+      id: 'RV-006',
+      text: 'I upgraded to Pro plan yesterday but still see the Basic plan features. When will the upgrade take effect?',
+      predicted_category: 'Billing and Payments',
+      predicted_urgency: 'Low',
+      corrected_category: 'Customer Service',
+      corrected_urgency: 'Medium',
+      status: 'pending',
+      created_at: '2026-10-07T15:48:00Z',
+      confidence: 0.45,
+    },
+    {
+      id: 'RV-007',
+      text: 'The promotional discount code SAVE20 isn\'t working at checkout. It says "code expired" but the promotion email says it\'s valid until Oct 15.',
+      predicted_category: 'Technical',
+      predicted_urgency: 'Low',
+      corrected_category: 'Billing and Payments',
+      corrected_urgency: 'Low',
+      status: 'used_for_retraining',
+      created_at: '2026-10-05T13:20:00Z',
+      confidence: 0.51,
+    },
+    {
+      id: 'RV-008',
+      text: 'My package was marked as delivered but I never received it. The tracking shows it was left at the front door but nothing was there.',
+      predicted_category: 'Returns and Exchanges',
+      predicted_urgency: 'Medium',
+      corrected_category: null,
+      corrected_urgency: null,
+      status: 'pending',
+      created_at: '2026-10-07T10:33:00Z',
+      confidence: 0.62,
+    },
+    {
+      id: 'RV-009',
+      text: 'How do I export my data before deleting my account? I want to keep my purchase history and saved addresses.',
+      predicted_category: 'Account / Subscription',
+      predicted_urgency: 'Low',
+      corrected_category: null,
+      corrected_urgency: null,
+      status: 'pending',
+      created_at: '2026-10-07T17:01:00Z',
+      confidence: 0.58,
+    },
+    {
+      id: 'RV-010',
+      text: 'I received the wrong color variant of the Bluetooth Speaker (got black instead of midnight blue). Order #ORD-61345.',
+      predicted_category: 'Shipping',
+      predicted_urgency: 'Low',
+      corrected_category: 'Refund',
+      corrected_urgency: 'Medium',
+      status: 'used_for_retraining',
+      created_at: '2026-10-04T12:15:00Z',
+      confidence: 0.44,
+    },
+  ];
+}
+
+export function getMockRetrainResult(): RetrainResult {
+  return {
+    status: 'completed',
+    f1_before: 0.906,
+    f1_after: 0.918,
+  };
+}
