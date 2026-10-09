@@ -1,5 +1,9 @@
 # TicketIQ — NLP-Powered Support Ticket Triage Dashboard
 
+> 🚀 **Live Demo:** [https://ticket-iq-bay.vercel.app/](https://ticket-iq-bay.vercel.app/)  
+> ⚡ **API & Swagger Docs:** [https://ticket-iq-yeek.onrender.com/docs](https://ticket-iq-yeek.onrender.com/docs)  
+> 🩺 **Health Check:** [https://ticket-iq-yeek.onrender.com/api/health](https://ticket-iq-yeek.onrender.com/api/health)
+
 ## What this is
 
 TicketIQ is an intelligent triage and analytics platform for customer support operations. Given an incoming raw support ticket, it runs a lean NLP pipeline to predict ticket category, assess urgency, score sentiment, extract key business entities, retrieve similar resolved historical tickets to suggest relevant answers, and identify queue-level trends.
@@ -107,6 +111,18 @@ Ticket-IQ/
 ---
 
 ## How to run it
+
+### Live Deployments
+
+| Component | Platform | URL |
+|---|---|---|
+| **Frontend Application** | Vercel | [https://ticket-iq-bay.vercel.app/](https://ticket-iq-bay.vercel.app/) |
+| **Backend REST API** | Render | [https://ticket-iq-yeek.onrender.com/](https://ticket-iq-yeek.onrender.com/) |
+| **API Swagger UI** | Render | [https://ticket-iq-yeek.onrender.com/docs](https://ticket-iq-yeek.onrender.com/docs) |
+| **API Health Check** | Render | [https://ticket-iq-yeek.onrender.com/api/health](https://ticket-iq-yeek.onrender.com/api/health) |
+
+> [!NOTE]
+> **Free Tier Cold Starts:** Render free-tier instances sleep when idle. The first request after an idle period may take 30–50 seconds to initialize the container; subsequent triage requests execute in ~50 ms. The frontend includes an automatic cold-start detector that continuously polls `/api/health` until the backend is fully responsive.
 
 ### Option 1: Docker Compose (Recommended)
 
