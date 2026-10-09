@@ -11,8 +11,11 @@ import numpy as np
 import pandas as pd
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(ROOT_DIR / "backend"))
+import app  # noqa: F401
 DATA_DIR = ROOT_DIR / "data" / "processed"
-ARTIFACTS_DIR = ROOT_DIR / "ml" / "artifacts"
+ARTIFACTS_DIR = ROOT_DIR / "backend" / "artifacts"
+OUT_DIR = ROOT_DIR / "ml" / "artifacts"
 
 
 def map_4class(cat: str) -> str:
@@ -157,7 +160,7 @@ def main():
 
     print("All assertions PASSED: Every example verified against independent re-reading of test.csv.")
 
-    out_path = ARTIFACTS_DIR / "error_analysis.json"
+    out_path = OUT_DIR / "error_analysis.json"
     with open(out_path, "w") as f:
         json.dump(error_analysis_data, f, indent=2)
     print(f"Saved {out_path} successfully.")

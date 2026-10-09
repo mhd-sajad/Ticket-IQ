@@ -13,6 +13,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT_DIR / "backend"))
+import app  # noqa: F401
 
 import joblib
 import numpy as np
