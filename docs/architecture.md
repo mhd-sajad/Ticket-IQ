@@ -41,7 +41,7 @@ graph TD
   - `core/database.py`: SQLite schema management, connection pooling, and startup seeding.
   - `api/routes/`: Distinct routers for `health`, `predict`, `insights`, `models`, `feedback`, `review`, and `tickets`.
   - `schemas/`: Strongly-typed Pydantic request and response models matching frontend TypeScript types.
-  - `services/`: Dedicated business logic for inference, feature attribution, similarity retrieval, entity extraction, sentiment analysis, analytics, and guarded retraining.
+  - `services/`: Dedicated business logic for inference, feature attribution, similarity retrieval, entity extraction, sentiment analysis, analytics (5 predefined keyword-rule topic groups; trained NMF topic model planned), and guarded retraining.
   - `nlp/`: Reusable preprocessing, tokenization, lemmatization, and feature engineering.
 - **`ml/`**:
   - `src/`: Model training, hyperparameter tuning, similarity index compilation, evaluation, and error analysis scripts.

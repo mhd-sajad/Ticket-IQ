@@ -25,7 +25,7 @@ Ticket-IQ/
 │   │   ├── api/routes/          # FastAPI route controllers
 │   │   │   ├── feedback.py      # /api/feedback (human correction submissions)
 │   │   │   ├── health.py        # /api/health
-│   │   │   ├── insights.py      # /api/insights (keyword-rule analytics)
+│   │   │   ├── insights.py      # /api/insights (predefined keyword-rule topic analytics)
 │   │   │   ├── models.py        # /api/models (comparison & on-demand test)
 │   │   │   ├── predict.py       # /api/predict (core triage inference)
 │   │   │   ├── review.py        # /api/review (review queue retrieval & retrain)
@@ -40,7 +40,7 @@ Ticket-IQ/
 │   │   ├── schemas/             # Strongly typed Pydantic models
 │   │   │   └── schemas.py       # Request/response contracts
 │   │   ├── services/            # Domain logic and service layer
-│   │   │   ├── analytics.py     # Aggregations & keyword topic grouping
+│   │   │   ├── analytics.py     # Aggregations & 5 keyword-rule topic groups (NMF planned)
 │   │   │   ├── entities.py      # Entity extraction service
 │   │   │   ├── explain.py       # TF-IDF linear model feature attribution
 │   │   │   ├── inference.py     # Runtime model loader & prediction
@@ -102,7 +102,7 @@ Ticket-IQ/
 3. **Similarity Retrieval:** `app/services/similarity.py` takes the L2-normalized TF-IDF vector and computes dot products against a pre-computed SciPy CSR sparse matrix of all 16,622 training tickets, retrieving the top nearest historical ticket in $<2$ ms without heavy neural embeddings.
 4. **Sentiment & Entities:** Concurrently, NLTK VADER assigns compound polarity scores, and regex rules extract order IDs, monetary amounts, error codes, emails, and dates.
 5. **Confidence Routing:** If category confidence is $<0.50$ or urgency confidence is $<0.45$, the ticket is flagged with `needs_review: true` and routed to the Review Queue for human oversight.
-6. **Analytics & Topics:** `/api/insights` aggregates ticket distribution metrics. **Note:** The Insights topics are keyword-rule groups, not a trained topic model (e.g. LDA/BERTopic).
+6. **Analytics & Topics:** `/api/insights` aggregates ticket distribution metrics. **Note:** The topics on the Insights page are 5 predefined keyword-rule groups defined in `backend/app/services/analytics.py`, not the output of a trained topic model; a trained NMF topic model is planned.
 
 ---
 
@@ -238,7 +238,7 @@ Rows denote true labels; columns denote predicted labels:
    - **Returns and Exchanges (F1 0.38)** and **Customer Service (F1 0.48)** are weak.
    - **Cross-Confusion:** **296 Technical tickets are predicted as Customer Service**, and **200 Customer Service tickets are predicted as Technical**. General customer inquiries frequently discuss technical glitches, blurring lexical boundaries.
    - **Urgency is a modest signal:** Accuracy is 54.7% vs a 41.6% baseline, and macro F1 is 0.53 vs 0.20. It provides a helpful initial triage tier, but requires human-in-the-loop review for borderline cases.
-2. **Rule-Based Insights Topics:** The topics surfaced in the Insights dashboard are grouped using deterministic keyword regex rules in `app/services/analytics.py`, not an unsupervised topic model (such as LDA or BERTopic).
+2. **Rule-Based Insights Topics:** The topics on the Insights page are 5 predefined keyword-rule groups defined in `backend/app/services/analytics.py`, not the output of a trained topic model (such as LDA or BERTopic); a trained NMF topic model is planned.
 3. **VADER Sentiment on Support Vocabulary:** Rule-based lexicon models like NLTK VADER misread customer support grievances. In *"My payment was double charged for order ORD-9921. Please refund immediately!"*, VADER scores `'please'` ($+1.3$) higher than `'charged'` ($-0.8$) while missing unlisted grievance words (`'refund'`, `'immediately'`, `'double'`), resulting in a falsely positive compound score of $+0.2003$.
 4. **Dataset Label Inconsistencies:**
    - `TCK-27513`: Labeled as `Billing and Payments` in ground truth, but text describes encryption techniques for medical records in Wave and Microsoft Dynamics. The model predicts `Customer Service` with 0.92 confidence.

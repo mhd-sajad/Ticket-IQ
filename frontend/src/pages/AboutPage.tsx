@@ -12,7 +12,7 @@ const NLP_TECHNIQUES = [
   { name: 'Sparse Dot Product', desc: 'L2-normalized sparse matrix cosine similarity (16.6k tickets) executed in < 2ms without ONNX runtime.' },
   { name: 'Regex Named Entities', desc: 'High-speed precompiled extraction for ORDER_ID, AMOUNT, ERROR_CODE, DATE, and EMAIL.' },
   { name: 'Sentiment Analysis', desc: 'Lexicon polarity scoring quantifying customer grievance and frustration intensity.' },
-  { name: 'Topic Modeling', desc: 'Unsupervised clustering discovering recurring systemic issues across support tickets.' },
+  { name: 'Topic Grouping', desc: 'Predefined keyword-rule clusters discovering recurring issues (trained NMF model planned).' },
   { name: 'Active Learning Retrain', desc: 'Automated feedback ingestion retraining pipeline with test-set regression gates.' },
 ];
 

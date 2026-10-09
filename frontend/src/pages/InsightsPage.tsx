@@ -100,7 +100,7 @@ export default function InsightsPage() {
         <div className="flex items-center justify-between">
           <h3 className="font-mono text-xs uppercase tracking-widest text-[#888888] flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d4f53c]" />
-            // DISCOVERED UNSUPERVISED TOPIC CLUSTERS
+            // PREDEFINED KEYWORD-RULE TOPIC CLUSTERS (NMF MODEL PLANNED)
           </h3>
           <span className="font-mono text-[10px] text-[#555555]">TF-IDF K-MEANS</span>
         </div>
